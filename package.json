@@ -12,6 +12,9 @@
     "express": "^4.17.1",
     "mysql2": "^2.2.5"
   },
+  "engines": {
+    "node": "14.16.x"
+  },
   "devDependencies": {},
   "keywords": [],
   "description": ""
