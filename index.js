@@ -4,6 +4,13 @@ var cors = require("cors");
 const productsRouter = require("./routes/products");
 
 const app = express();
+
+/* Si no esta definido port en .env default es 3000 */
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(
@@ -11,12 +18,6 @@ app.use(
     extended: true,
   })
 );
-
-/* Si no esta definido port en .env default es 3000 */
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
 
 /* Root muestra si la aplicacion esta corriendo */
 app.get("/", (req, res) => {
