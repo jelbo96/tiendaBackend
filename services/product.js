@@ -2,12 +2,12 @@ const db = require("./db");
 const config = require("../config");
 
 async function getProducts(text = "") {
-  console.log("getting products");
   let rows = [];
   if (text) {
-    console.log("searching");
+    /* Si hay texto corresponde a busqueda */
     rows = await db.query(`SELECT * from product where name LIKE '%${text}%'`);
   } else {
+    /* Sino trae todos los datos */
     rows = await db.query(`SELECT * FROM product`);
   }
 

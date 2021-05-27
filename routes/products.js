@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const products = require("../services/product");
 
+/* Definición de la ruta */
 router.get("/", async function (req, res, next) {
   try {
     console.log("Trying to get products");
